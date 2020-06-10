@@ -1,0 +1,77 @@
+<view class="content">
+	<view class="search">
+		<icon type="search" color="#9da3b4"></icon>
+		<input type="search" class="search_border" placeholder="搜索..." placeholder-style="padding-left:90rpx; color:#9da3b4;"></input>
+	</view>
+	<view class="classification">
+		<view class="top">
+			<view class="ranking">
+				<view class="ranking-left">分类排行</view>
+				<view class="ranking-right">查看全部 ></view>
+			</view>
+		</view>
+		<scroll-view scroll-x>
+			<view class="bottom">
+
+				<view class="classification_item" wx:for="{{list}}" wx:key="{{index}}">
+					<image src="{{item.image}}"></image>
+					<view class="text">{{item.text}}</view>
+				</view>
+
+
+			</view>
+		</scroll-view>
+
+
+	</view>
+	<view class="classification">
+		<view class="top">
+			<view class="ranking">
+				<view class="ranking-left">作者排行</view>
+				<navigator url="../author/author">
+					<view class="ranking-right">查看全部 ></view>
+				</navigator>
+			</view>
+		</view>
+		<scroll-view scroll-x>
+
+			<view class="bottom">
+
+				<view class="classification_item" wx:for="{{datas}}" wx:key="{{index}}">
+					<navigator url="../authordetails/authordetails?image={{item.image}}&text={{item.text}}">
+						<image src="{{item.image}}"></image>
+						<view class="text">{{item.text}}</view>
+					</navigator>
+				</view>
+
+
+			</view>
+
+
+		</scroll-view>
+
+
+	</view>
+	<view class="classification">
+		<view class="top">
+			<view class="ranking">
+				<view class="ranking-left">新发布</view>
+				<view class="ranking-right">查看全部 ></view>
+			</view>
+		</view>
+		<scroll-view scroll-x>
+			<view class="bottom">
+
+				<view class="classification_item" wx:for="{{arr}}" wx:key="{{index}}">
+					<image src="{{item.image}}" class="new"></image>
+					<view class="text">{{item.text}}</view>
+				</view>
+
+
+			</view>
+		</scroll-view>
+
+
+	</view>
+
+</view>
